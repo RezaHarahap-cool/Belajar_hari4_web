@@ -1,0 +1,710 @@
+:root {
+    --primary: #a97853;
+    --secondary: black;
+    --bg: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: var(--primary);
+}
+
+/*===================================== 1. bagian awal navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 7%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary);
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+    color: var(--secondary);
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid var(--primary);
+    transform: scaleX(0);
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(1);
+    transition: transform 250ms ease-in-out;
+}
+
+.navbar .navbar-ekstra button {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--primary);
+    color: var(--bg);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.navbar .navbar-ekstra .login {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    margin-right: 1rem;
+}
+
+.navbar .navbar-ekstra .login,
+.navbar .navbar-ekstra a,
+.navbar .navbar-ekstra .register {
+    transition: all 0.3s ease-in-out;
+    /* durasi & efek transisi */
+}
+
+.login-awal,
+.register-awal {
+    display: none;
+}
+
+/* Hover effect */
+.navbar .navbar-ekstra .login:hover {
+    background-color: var(--primary);
+    color: var(--bg);
+}
+
+.navbar .navbar-ekstra .register:hover {
+    background-color: var(--bg);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.navbar .navbar-ekstra a {
+    margin: 0 0.5rem;
+    color: var(--secondary);
+}
+
+.navbar .navbar-ekstra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+.navbar .navbar-nav .nav-login {
+    display: none;
+}
+
+/*===================================== 1. bagian akhir navbar */
+
+/*===================================== 1. bagian awal hero */
+/* Hero Section */
+.hero {
+    padding: 6rem 7% 1.4rem;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: black;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero .row {
+    display: flex;
+}
+
+.hero .row .hero-img {
+    flex: 40rem;
+}
+
+.hero .row .hero-img img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.hero .row .content {
+    flex: 1 1 50rem;
+    padding: 0rem 0rem 0rem 4rem;
+}
+
+.hero .row .content {
+    margin-top: 10rem;
+    padding-left: 0;
+}
+
+.hero .row .content p {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.hero .row .cta-hero {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 3rem;
+    background-color: var(--primary);
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/*===================================== 1. bagian akhir hero */
+/*===================================== 1. bagian awal tawaran */
+.tawarkan {
+    background-color: whitesmoke;
+}
+
+.tawarkan p,
+.about p,
+.menu p {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.tawarkan h2,
+.about h2,
+.menu h2 {
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 4rem;
+    color: black;
+}
+
+.tawarkan h2 span,
+.about h2 span,
+.menu h2 span {
+    color: var(--primary);
+}
+
+.tawarkan .row {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    padding: 1.4rem 7%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Card / column */
+.tawarkan .tawarkan-col {
+    background: white;
+    box-shadow: 0 8px 20px rgba(20, 20, 20, 0.06);
+    padding: 28px;
+    flex: 1 1 300px;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    /* grow, shrink, basis */
+    max-width: 360px;
+    min-width: 260px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+    overflow: hidden;
+}
+
+/* Image */
+.tawarkan .tawarkan-col img {
+    width: 84px;
+    height: 84px;
+    object-fit: contain;
+    margin: 0 auto;
+    filter: saturate(0.95) contrast(0.98);
+}
+
+/* Heading inside card */
+.tawarkan .tawarkan-col h3 {
+    margin: 4px 0 0;
+    font-size: 1.15rem;
+    color: #2a2a2a;
+}
+
+/* Description */
+.tawarkan .tawarkan-col p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-top: 4px;
+    flex: 1 0 auto;
+    /* supaya paragraf mengisi sisa ruang */
+}
+
+.tawarkan .row .cta-hero {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 40px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/*===================================== 1. bagian akhir tawaran */
+
+/*===================================== 1. bagian awal tentang kami  */
+
+
+.about .row .content span {
+    color: var(--primary);
+}
+
+.about .row {
+    display: flex;
+    padding: 1.4rem 7%;
+    margin-bottom: 3rem;
+}
+
+.about .row .about-img {
+    flex: 1 1 40rem;
+}
+
+.about .row .about-img img {
+    width: 100%;
+}
+
+.about .row .content {
+    margin-bottom: 1rem;
+    flex: 1 1 50rem;
+    padding: 0rem 0rem 0rem 4rem;
+}
+
+.about .row .content h3 {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.about .row .content p {
+    padding: 2rem;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.about .row .cta-about {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 0.8rem 3rem;
+    background-color: var(--primary);
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/*===================================== 1. bagian akhir tentang kami  */
+/*===================================== 1. bagian awal produk kami  */
+/* Produk bunga */
+.menu {
+    background-color: whitesmoke;
+    padding-top: 3rem;
+}
+
+.menu .row {
+    margin-bottom: 5rem;
+}
+
+.menu h2,
+.contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.menu p,
+.contact p {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* Produk bunga end */
+
+
+/* card produk bunga */
+.menu .row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+}
+
+.menu-cart {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 5rem;
+}
+
+.menu .row .menu-cart .btn {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    padding: 0.9rem 3rem;
+    font-size: 1rem;
+    color: white;
+    border-radius: 20px;
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+.menu-card-title {
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    color: black;
+}
+
+.menu-card-img {
+    width: 350px;
+    height: 350px;
+}
+
+/*===================================== 1. bagian akhir produk kami  */
+/*===================================== 1. bagian awal tertimoni  */
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg);
+}
+
+.testimonial {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.testimonial h2 {
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    color: black;
+    margin-top: 0px;
+}
+
+.testimonial h2 span {
+    color: var(--primary);
+}
+
+.testimonial p {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.testimonial .image {
+    height: 170px;
+    width: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 7px solid var(--primary);
+}
+
+.testimonial .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+    height: 100%;
+    width: 100%;
+}
+
+.slide p {
+    text-align: center;
+    padding: 0 160px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--primary);
+}
+
+.slide .quote-icon {
+    font-size: 30px;
+    color: var(--primary);
+}
+
+.slide .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details .name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.details .job {
+    font-size: 12px;
+    padding: 1rem;
+    font-weight: 400;
+    color: #333;
+}
+
+/* swiper button css */
+.nav-btn {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    transform: translateY(30px);
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn::after,
+.nav-btn::before {
+    font-size: 20px;
+    color: #fff;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--primary);
+}
+
+/*===================================== 1. bagian akhir tertimoni  */
+
+.footer {
+    background-color: var(--primary);
+    /* warna background footer */
+    color: #fff;
+    /* warna teks */
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    width: 100%;
+    height: 100px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #f39c12;
+    /* warna saat hover */
+}
+
+
+/* Bagian media queries */
+
+/* Laptop start */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+
+}
+
+/* Laptop end */
+
+/* tablet start*/
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    /*===================================== 1. bagian awal navbar */
+    .login,
+    .register {
+        display: none;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .navbar .navbar-nav .nav-login {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: var(--primary);
+        color: var(--bg);
+        width: 30rem;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        transition: right 0.3s ease-in-out;
+    }
+
+    .navbar .navbar-nav a,
+    .navbar .navbar-nav button {
+        font-size: 1.6rem;
+        text-align: left;
+        padding: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: var(--bg);
+    }
+
+    .navbar .navbar-nav a:hover {
+        color: var(--secondary);
+    }
+
+    .navbar .navbar-nav a::after {
+        content: '';
+        display: block;
+        padding-bottom: 0.5rem;
+        border-bottom: 0.2rem solid var(--secondary);
+        transform: scaleX(0);
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(1);
+        transition: transform 250ms ease-in-out;
+    }
+
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .hero .row {
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0rem;
+    }
+
+    .about .row {
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0rem;
+    }
+
+    .tawarkan .row .tawarkan-col {
+        max-width: 90%;
+        height: 350px;
+    }
+
+    .slide p {
+        padding: 0 20px;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .about .row img {
+        height: 50rem;
+        width: 100%;
+    }
+
+    .about .row .content .tombol {
+        text-align: center;
+        padding: 0;
+    }
+
+    .about .row .about-img img {
+        height: 300px;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+}
+
+/*===================================== 1. bagian awal navbar */
+
+
+/* tablet end */
+
+/* hp start */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+}
